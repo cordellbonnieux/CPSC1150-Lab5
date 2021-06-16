@@ -21,37 +21,28 @@ public class B2D {
         String binary = input.nextLine();
 
         // create decimal variable to store conversion
-        int decimal = 1;
-
-            // check
-            System.out.println("right before the loop");
+        int decimal = 0;
 
         // start loop; checks for validity while converting to decimal
         for (int i = binary.length(), e = 1; i > 0; i--, e *= 2) {
-
-                // check
-                System.out.println("entered loop");
             
-            // is the current index i of binary 0?
-            if (binary.charAt((i - 1)) == '0')
-                continue;
-            
-            // is the current index i of binary 1?
-            if (binary.charAt((i - 1)) == '1')
+            // is the current index i of binary 1?    
+            if (binary.charAt((i - 1)) == '1') {
                 decimal += e;
-            // if it's not 1 or 0, reset the program
-            else
-                //main(args);
-                System.out.println("booboo");
+
+            // if not check if the current index i of binary NOT 0?
+            } else if (binary.charAt((i - 1)) != '0') {
+
+                // if so restart the program
+                System.out.println(binary + " is not a valid binary number.");
+                main(args);
+            }
         }
+
         // print the results to the console
-        System.out.printf("the binary number %s in decimal is %d.", binary, decimal);
+        System.out.printf("the binary number %s in decimal notation is %d. \n", binary, decimal);
 
         // end the program
         System.exit(0);
-
-
-                    // check
-                    System.out.println("program should have terminated before this");
     }
 }
