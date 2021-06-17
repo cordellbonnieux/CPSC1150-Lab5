@@ -45,23 +45,8 @@ public class Primes {
         // prints prime numbers out in a 8 row table (less rows if there are less values to display)
         while (x < primeCount) {
 
-            if ((primeCount - x) >= 8) {
-                System.out.printf("%d %d %d %d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primeCount - x) == 7) {
-                System.out.printf("%d %d %d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primeCount - x) == 6) {
-                System.out.printf("%d %d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primeCount - x) == 5) {
-                System.out.printf("%d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primeCount - x) == 4) {
-                System.out.printf("%d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primeCount - x) == 3) {
-                System.out.printf("%d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primeCount - x) == 2) {
-                System.out.printf("%d %d \n", primes.get(x++), primes.get(x++));
-            } else {
-                System.out.printf("%d \n", primes.get(x++));
-            }
+            System.out.printf("%d %d %d %d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
+
         }
     }
 }
