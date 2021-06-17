@@ -15,36 +15,53 @@ public class Primes {
 
         // loop from 2 to 1000 inclusive and check for primes
         for (int i = 1000; i > 1; i--) {
+            
+            // variable to hold whether current i is composite or prime
+            boolean isComposite = false;
 
-            if (!(i % 2 == 0 || i % 3 == 0 || i % 4 == 0 || i % 5 == 0 || i % 6 == 0 || i % 7 == 0 || i % 8 == 0 || i % 9 == 0))
+            // loop each i to check if composite
+            for (int y = 2; y <= i / 2; y++) {
+                if (i % y == 0) {
+                    isComposite = true;
+                    break;
+                }
+            }
+
+            // if i is not a composite, it is prime; store in primes array
+            if (!isComposite)
                 primes.add(i);
-            else if (i == 2 || i == 3 || i == 5 || i == 7)
-                primes.add(i);
+
         }
 
+        // prompt a header for the table
         System.out.println("Prime numbers from 2 - 1000 (inclusive):");
 
-        // print out the primes in a nice table
-        for (int x = 1; x < primes.size(); x++) {
-            if ((primes.size() - x) >= 8) {
+        // store the length of the primes array in a new variable
+        int primeCount = primes.size();
+
+        // x counts the number of prime numbers displayed to console in the loop below
+        int x = 0;
+
+        // prints prime numbers out in a 8 row table (less rows if there are less values to display)
+        while (x < primeCount) {
+
+            if ((primeCount - x) >= 8) {
                 System.out.printf("%d %d %d %d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primes.size() - x) == 7) {
+            } else if ((primeCount - x) == 7) {
                 System.out.printf("%d %d %d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primes.size() - x) == 6) {
+            } else if ((primeCount - x) == 6) {
                 System.out.printf("%d %d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primes.size() - x) == 5) {
+            } else if ((primeCount - x) == 5) {
                 System.out.printf("%d %d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primes.size() - x) == 4) {
+            } else if ((primeCount - x) == 4) {
                 System.out.printf("%d %d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primes.size() - x) == 3) {
+            } else if ((primeCount - x) == 3) {
                 System.out.printf("%d %d %d \n", primes.get(x++), primes.get(x++), primes.get(x++));
-            } else if ((primes.size() - x) == 2) {
+            } else if ((primeCount - x) == 2) {
                 System.out.printf("%d %d \n", primes.get(x++), primes.get(x++));
             } else {
                 System.out.printf("%d \n", primes.get(x++));
             }
         }
-    
-    
     }
 }
