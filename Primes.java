@@ -16,25 +16,17 @@ public class Primes {
         // loop from 2 to 1000 inclusive and check for primes
         for (int i = 2; i <= 1000; i++) {
 
-            for (int x = 2; x <= 9; x++) {
-                
-                while (i % x == 0) {
-                    
-                }
-            }
-
-            // check if the number is prime, if so store it in primes
-            if (!(i % 2 == 0 || i % 3 == 0 || i % 4 == 0 || i % 5 == 0 || i % 6 == 0 || i % 7 == 0 || i % 8 == 0 || i % 9 == 0))
+            // if number is not prime continue
+            if (i < 10 && (i != 2 || ))
+            else if (i % 2 == 0 || i % 3 == 0 || i % 4 == 0 || i % 5 == 0 || i % 6 == 0 || i % 7 == 0 || i % 8 == 0 || i % 9 == 0) 
+                continue;
+            // if number is prime, add to primes
+            else
                 primes.add(i);
         }
 
-
-
-        int x = primes.size() - 1;
-        while (x > 0) {
-            System.out.println(primes.get(x));
-            x--;
-        }
+        for (int x = primes.size() - 1; x > 0; x--)
+            System.out.print(primes(x) + " ");
     
     }
 }
